@@ -120,13 +120,24 @@ function tally(answers, keys) {
     if (!a.answered(q.id)) continue;
     const picked = Array.isArray(answers[q.id]) ? answers[q.id] : [answers[q.id]];
 
-    for (const k of keys) possible[k] += maxPossible(q, k);
+    /* Score the question in isolation first. Ticking six migraine symptoms
+       should max out this question, not out-earn its own ceiling and drown
+       the questions that follow — otherwise conditions probed mostly by
+       multi-selects score on a different scale from the rest. */
+    const q_earned = {};
     for (const v of picked) {
       const opt = q.options.find(o => o.v === v);
       if (!opt || !opt.s) continue;
       for (const [k, w] of Object.entries(opt.s)) {
-        if (k in earned) earned[k] += w;
+        if (k in earned) q_earned[k] = (q_earned[k] || 0) + w;
       }
+    }
+
+    for (const k of keys) {
+      const ceiling = maxPossible(q, k);
+      possible[k] += ceiling;
+      const got = q_earned[k] || 0;
+      earned[k] += got > ceiling ? ceiling : got;
     }
   }
   return { earned, possible };

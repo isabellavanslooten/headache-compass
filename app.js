@@ -35,6 +35,7 @@ function renderQuestion() {
   const picked = state.answers[q.id];
   const isOn = v => Array.isArray(picked) ? picked.includes(v) : picked === v;
 
+  $('qcard').dataset.qid = q.id;
   $('qcard').innerHTML = `
     <h2>${esc(q.text)}</h2>
     ${q.help ? `<p class="qhelp">${esc(q.help)}</p>` : ''}
@@ -175,7 +176,14 @@ function fullResults(r) {
       wording. The transcript below is still worth bringing to an appointment.</p></div>` : `
       <div class="cards">
         ${r.top.map((c, i) => card(c, i)).join('')}
-      </div>`}
+      </div>
+      ${r.top.length < 3 ? `
+        <div class="note">
+          <p><strong>Only ${r.top.length === 1 ? 'one pattern' : `${r.top.length} patterns`} came back.</strong>
+          That is usually a good sign rather than a gap — your answers pointed clearly in one
+          direction instead of straddling several. Padding the list with weak matches would only
+          add noise to the conversation with your doctor.</p>
+        </div>` : ''}`}
 
     ${r.also.length ? `
       <div class="note">

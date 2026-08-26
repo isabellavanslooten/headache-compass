@@ -177,8 +177,8 @@ export const QUESTIONS = [
   {
     id: 'assoc',
     section: 'Your attacks',
-    text: 'What happens alongside the pain?',
-    help: 'Tick everything you notice during a typical attack.',
+    text: 'What happens alongside your attacks?',
+    help: 'Tick everything you notice during a typical attack, whether or not there is pain.',
     type: 'multi',
     exclusive: 'none',
     options: [

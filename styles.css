@@ -278,6 +278,17 @@ details.sheet[open] > summary::after { content: "－"; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 0; }
 .actions .btn { flex: 1 1 160px; }
 
+/* ---------- footer ---------- */
+.foot {
+  border-top: 1px solid var(--line);
+  background: var(--panel-2);
+  padding: 28px 0 40px;
+  margin-top: 56px;
+}
+.foot p { font-size: 13.5px; color: var(--ink-2); margin: 0 0 8px; }
+.foot p:last-child { margin: 0; }
+.foot strong { color: var(--ink); }
+
 /* ---------- print ---------- */
 @media print {
   .topbar, .nav, .actions, .kbd-hint, .skip, #gate, #quiz { display: none !important; }
