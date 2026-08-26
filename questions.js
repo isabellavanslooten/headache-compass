@@ -204,13 +204,13 @@ export const QUESTIONS = [
     exclusive: 'none',
     when: a => oneSided(a) && a.get('primary') !== 'aura_only',
     options: [
-      { v: 'tearing', label: 'That eye waters', s: { cluster: 5, paroxysmal_hemicrania: 4, sunct: 5, hemicrania_continua: 3, tth: -3 } },
+      { v: 'tearing', label: 'That eye waters', s: { cluster: 5, paroxysmal_hemicrania: 4, sunct: 5, hemicrania_continua: 3, mig_no_aura: 1, tth: -3 } },
       { v: 'red_eye', label: 'That eye goes red or bloodshot', s: { cluster: 4, sunct: 5, paroxysmal_hemicrania: 3, hemicrania_continua: 2 } },
       { v: 'ptosis', label: 'That eyelid droops or the eye looks smaller', s: { cluster: 5, paroxysmal_hemicrania: 3, hemicrania_continua: 3 } },
       { v: 'nasal', label: 'That nostril blocks or runs', s: { cluster: 4, paroxysmal_hemicrania: 3, hemicrania_continua: 2, sinus: 2, mig_no_aura: 1 } },
       { v: 'sweating', label: 'Forehead or face sweats on that side', s: { cluster: 3, paroxysmal_hemicrania: 2 } },
       { v: 'ear', label: 'That ear feels full or blocked', s: { cluster: 1, hemicrania_continua: 1, vestibular_mig: 2, csf_leak: 2 } },
-      { v: 'none', label: 'None of these', s: { mig_no_aura: 3, tth: 2, cluster: -6, paroxysmal_hemicrania: -5, sunct: -6, hemicrania_continua: -4 } }
+      { v: 'none', label: 'None of these', s: { mig_no_aura: 2, tth: 2, cluster: -6, paroxysmal_hemicrania: -5, sunct: -6, hemicrania_continua: -4 } }
     ]
   },
   {
