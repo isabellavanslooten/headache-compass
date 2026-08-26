@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headache Compass — organise your migraine history for your doctor</title>
+<meta name="description" content="A private, browser-only question tree that helps you describe your headaches in clinical language and bring a structured summary to your doctor. Not a diagnostic tool.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <span class="mark">Headache&nbsp;Compass</span>
+    <span class="privacy" title="This page has no server, no analytics, and no storage.">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      Runs entirely on your device
+    </span>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- ============ Gate ============ -->
+  <section id="gate" class="screen">
+    <p class="eyebrow">Before you begin</p>
+    <h1>This is not a diagnosis. It is a way to describe your headaches.</h1>
+    <p class="lede">
+      Headache medicine is unusual: there is no blood test and no scan that confirms migraine.
+      A diagnosis is made almost entirely from how you describe your attacks. That puts a lot of
+      weight on a conversation that often lasts ten minutes.
+    </p>
+    <p class="lede">
+      This page walks you through the questions a headache specialist would ask, then hands you an
+      organised summary to bring to that appointment — in the vocabulary clinicians actually use.
+    </p>
+
+    <div class="warn">
+      <h2>Please read this part</h2>
+      <ul>
+        <li><strong>This cannot diagnose you.</strong> It is a structured questionnaire, not a clinician. It has never examined you, cannot see your medical history, and can be confidently wrong.</li>
+        <li><strong>It is not a substitute for medical care</strong> — not for a diagnosis, not for treatment, and not for a reason to delay seeing someone.</li>
+        <li><strong>Some headaches are emergencies.</strong> If your headache came on like a thunderclap, is the worst of your life, comes with fever and a stiff neck, or with weakness, confusion, or vision loss that has not resolved — stop and seek emergency care now.</li>
+        <li><strong>Never change or stop a prescribed medication</strong> because of anything on this page.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-note">
+      <h3>What happens to your answers</h3>
+      <p>
+        Nothing leaves your device. There is no account, no database, no analytics, and no cookie.
+        Every answer lives in your browser's memory and is gone the moment you close the tab —
+        which also means there is no way to recover a session, so print or copy your summary
+        before you leave.
+      </p>
+    </div>
+
+    <button id="begin" class="btn primary big">I understand — start the questions</button>
+    <p class="fineprint">About 15–25 questions, five minutes. Nothing is saved.</p>
+  </section>
+
+  <!-- ============ Questions ============ -->
+  <section id="quiz" class="screen" hidden>
+    <div class="progress" role="group" aria-label="Progress">
+      <div class="progress-meta">
+        <span id="sectionName">Safety check</span>
+        <span id="counter">1 of 20</span>
+      </div>
+      <div class="track"><div id="bar" class="fill" style="width:0%"></div></div>
+    </div>
+
+    <div id="qcard" class="qcard"></div>
+
+    <div class="nav">
+      <button id="back" class="btn ghost">Back</button>
+      <button id="next" class="btn primary">Continue</button>
+    </div>
+    <p class="fineprint kbd-hint">Tip: press <kbd>1</kbd>–<kbd>9</kbd> to pick an answer, <kbd>Enter</kbd> to continue.</p>
+  </section>
+
+  <!-- ============ Results ============ -->
+  <section id="results" class="screen" hidden></section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>Not medical advice.</strong> Headache Compass is an educational tool. It does not diagnose, treat, or replace a qualified clinician. If you are worried about a headache, contact a healthcare professional; if it is sudden, severe, or comes with neurological symptoms, seek emergency care.</p>
+    <p class="dim">Descriptions are based on the International Classification of Headache Disorders (ICHD‑3) framework. No data is collected, stored, or transmitted.</p>
+  </div>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
